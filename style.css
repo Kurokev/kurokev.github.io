@@ -1,0 +1,200 @@
+/* ===== GAYA PARTICLE BACKGROUND ===== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #1a2833, #2c3e50, #d35400, #c0392b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: 0;
+}
+
+/* ===== GAYA DASAR HALAMAN ===== */
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    color: #ecf0f1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ===== GAYA PRELOADER ===== */
+#preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #ffffff;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    z-index: 9999; transition: opacity 0.75s ease, visibility 0.75s ease;
+}
+.spinner {
+    width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #3498db;
+    border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 15px;
+}
+#preloader p { color: #333; font-size: 1.2em; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+#preloader.hidden { opacity: 0; visibility: hidden; }
+
+/* ===== GAYA KONTEN UTAMA ===== */
+.container {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 680px;
+}
+
+.profil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid rgba(236, 240, 241, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-weight: 300;
+    margin-top: 0;
+    color: rgba(236, 240, 241, 0.8);
+}
+
+.links {
+    margin-top: 30px;
+}
+
+/* ===== GAYA TOMBOL LINK UTAMA ===== */
+.tombol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Tombol memenuhi lebar container */
+    max-width: 400px; /* Lebar maksimal tombol */
+    margin: 15px auto;
+    padding: 15px;
+    background-color: rgba(236, 240, 241, 0.1);
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid rgba(236, 240, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tombol svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.tombol:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Gaya untuk tombol yang disabled/maintenance */
+.tombol.disabled {
+    opacity: 0.6; /* Membuat tombol terlihat sedikit redup */
+    cursor: not-allowed; /* Mengubah kursor menjadi tanda "tidak diizinkan" */
+    background-color: rgba(236, 240, 241, 0.05); /* Sedikit lebih gelap */
+    border-color: rgba(236, 240, 241, 0.1); /* Border juga lebih gelap */
+    color: rgba(236, 240, 241, 0.5); /* Teks juga lebih redup */
+}
+
+.tombol.disabled:hover {
+    transform: none; /* Menghilangkan efek hover */
+    box-shadow: none; /* Menghilangkan shadow saat hover */
+    background-color: rgba(236, 240, 241, 0.05); /* Memastikan background tidak berubah saat hover */
+    border-color: rgba(236, 240, 241, 0.1); /* Memastikan border tidak berubah saat hover */
+}
+
+.tombol.disabled svg {
+    color: rgba(236, 240, 241, 0.5); /* Warna ikon juga diredupkan */
+}
+/* ===== GAYA CONNECT & FOOTER ===== */
+.connect-section {
+    margin-top: 40px;
+}
+
+.connect-section p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(236, 240, 241, 0.1);
+    color: #ecf0f1;
+    border-radius: 10px;
+    border: 1px solid rgba(236, 240, 241, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+footer {
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: rgba(236, 240, 241, 0.6);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== WARNA HOVER UNIK ===== */
+
+/* Tombol Utama */
+.tombol.github:hover {
+    background-color: #333;
+    border-color: #333;
+}
+.tombol.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #feda75 0%, #fa7e1e 5%, #d62976 45%, #962fbf 60%, #4f5bd5 90%);
+    border-color: transparent;
+}
+.tombol.linkedin:hover {
+    background-color: #0A66C2;
+    border-color: #0A66C2;
+}
+
+/* Ikon Sosial Kecil */
+.social-icon.github:hover {
+    background-color: #333;
+    border-color: #333;
+}
+.social-icon.linkedin:hover {
+    background-color: #0A66C2;
+    border-color: #0A66C2;
+}
